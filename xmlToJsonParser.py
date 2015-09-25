@@ -27,6 +27,6 @@ for child in root:
 json = json.dumps(lemmaList)
 
 # write to new file
-textfile = open('dictionary_output.js','wb')
+textfile = open('dictionary_output.json','wb')
 textfile.write(json)
 textfile.close()
