@@ -10,17 +10,12 @@ root = parsedXmlOutput.getroot()
 lemmaList = [];
 
 # collect LemmaSigns and Definitions, create newLemma dicts and append them to lemmaList
-for child in root:
+for entry in root:
     newLemma = {"word":[], "definition":[]}
-    for child in child:
-        if child.tag == "Lemma.LemmaSign":
-            newLemma["word"].append(child.text)
-        elif child.tag == "Sense":
-            for child in child:
-                if child.tag == "Definition":
-                    for child in child:
-                        if child.tag == "Definition.Definition":
-                            newLemma["definition"].append(child.text)
+    for word in entry.iter("Lemma.LemmaSign"):
+        newLemma["word"].append(word.text)
+    for definition in entry.iter("Definition.Definition"):
+        newLemma["definition"].append(definition.text)
     lemmaList.append(newLemma)
 
 # create json
