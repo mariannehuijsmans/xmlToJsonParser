@@ -1,9 +1,10 @@
 # import libraries
 import xml.etree.ElementTree as ET
 import json
+import sys
 
 # parse XML
-parsedXmlOutput = ET.parse("KwkDict - Kwak'wala.xml")
+parsedXmlOutput = ET.parse(sys.argv[1])
 root = parsedXmlOutput.getroot()
 
 # list variable to house newLemma dicts
