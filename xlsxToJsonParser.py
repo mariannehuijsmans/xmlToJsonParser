@@ -12,11 +12,10 @@ ws = wb.active
 wordList = []
 
 # Loop through rows in worksheet, create if statements for different columns and append Lemmas to wordList.
-for row in ws.iter_rows('A2:C3'):
+for entry in ws.iter_rows('A2:C3'):
     newLemma = {"word":[], "definition":[]}
-    for col in row:
+    for col in entry:
         if col.column == 'A':
-            print(col.value)
             newLemma["word"].append(col.value)
         if col.column == 'B':
             newLemma["definition"].append(col.value)
