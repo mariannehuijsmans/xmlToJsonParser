@@ -24,7 +24,7 @@ for entry in ws.iter_rows('A2:C3'):
 # create json
 json = json.dumps(wordList)
 
-# write to new file
+# write to new file, for Python 3.x change write parameter to 'w'
 textfile = open('wordlist.txt','wb')
 textfile.write(json)
 textfile.close()
