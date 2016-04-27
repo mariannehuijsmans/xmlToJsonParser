@@ -1,6 +1,7 @@
 # Import Libraries
 from openpyxl import load_workbook 
-from openpyxl.styles import Font
+from openpyxl.styles import Font, Fill, Color
+from openpyxl.cell import Cell
 import sys
 import json
 
